@@ -82,7 +82,7 @@ module.exports = {
       },
       amount:{
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       asset:{
         allowNull: false,

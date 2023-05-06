@@ -2,7 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 const app = express();
 
 app.use(cors());
@@ -17,22 +17,26 @@ app.use(express.urlencoded({ extended: false }));
 const db = require("./db/models/index");
 
 // import models
-const { users, comments } = db;
+const { users, creators } = db;
 
+// Require Controllers
 const UserController = require("./Controllers/UserController");
-const CommentController = require("./Controllers/CommentController");
+const CreatorController = require("./Controllers/CreatorController");
 
+// Require Routers
 const UserRouter = require("./Routers/UserRouter");
-const CommentRouter = require("./Routers/CommentRouter");
+const CreatorRouter = require("./Routers/CreatorRouter");
 
+// Define Controllers
 const userController = new UserController(users);
-const commentController = new CommentController(comments);
+const creatorController = new CreatorController(creators);
 
-const userRouter = new UserRouter(userController, express, checkJwt).route();
-const commentRouter = new CommentRouter(commentController, express).route();
+// Define Routers
+const userRouter = new UserRouter(userController, express).route();
+const creatorRouter = new CreatorRouter(creatorController, express).route();
 
-app.use("/profile", userRouter);
-app.use("/comment", commentRouter);
+app.use("/users", userRouter);
+app.use("/creators", creatorRouter);
 
 app.listen(PORT, () => {
   console.log(`Express app listening on port ${PORT}!`);
