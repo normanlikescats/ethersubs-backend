@@ -1,6 +1,7 @@
 class PostController {
-  constructor(postModel) {
+  constructor(postModel, commentModel) {
     this.postModel = postModel;
+    this.commentModel = commentModel;
   }
 
   // Grab all posts by Creators
@@ -92,8 +93,31 @@ class PostController {
   // Delete Post
   deletePost = async (req, res) => {
     const id = req.params.id
-    // code in dependency deletion here
+    // search for post's comments to delete first
+    let commentIdArr;
     try{
+      const commentId = await this.commentModel.findAll({
+        attributes: ['id'],
+        where:{
+          post_id: id
+        }
+      })
+      let stringifiedCommentId = JSON.stringify(commentId)
+      let parsedCommentId = JSON.parse(stringifiedCommentId)
+      commentIdArr = parsedCommentId.map(id => id.id)
+    } catch(err) {
+      return res.status(400).json({ error: true, msg: err });
+    }
+    try{
+      // delete comments
+      await this.commentModel.destroy(
+        {
+          where:{
+            id: commentIdArr
+          }
+        }
+      ) 
+      // delete post
       await this.postModel.destroy(
         {
           where:{
