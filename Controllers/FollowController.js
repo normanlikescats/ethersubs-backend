@@ -9,6 +9,7 @@ class FollowController {
     try {
       const allFollowsByUser = await this.followModel.findAll(
         {
+          attributes: ['creator_id'],
           where:{
             user_id: user_id
           }
@@ -26,12 +27,32 @@ class FollowController {
     try {
       const allFollowsByCreator = await this.followModel.findAll(
         {
+          attributes: ['user_id'],
           where:{
             creator_id: creator_id
           }
         }
       );
       return res.json(allFollowsByCreator)
+    } catch(err){
+      return res.status(400).json({ error: true, msg: err });
+    }
+  }
+
+  // Grab all follows by Creator by User
+  getFollowsByCreatorByUser = async (req, res) =>{
+    const creator_id = req.params.creatorId
+    const user_id = req.params.userId
+    try {
+      const followsByCreatorByUser = await this.followModel.findAll(
+        {
+          where:{
+            creator_id: creator_id,
+            user_id: user_id
+          }
+        }
+      );
+      return res.json(followsByCreatorByUser)
     } catch(err){
       return res.status(400).json({ error: true, msg: err });
     }

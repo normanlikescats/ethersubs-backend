@@ -8,6 +8,7 @@ class FollowRouter {
 
     router.get("/user/:userId", this.followController.getAllFollowsByUser);
     router.get("/creator/:creatorId", this.followController.getAllFollowsByCreator);
+    router.get("/one/:creatorId/:userId", this.followController.getFollowsByCreatorByUser);
     router.post("/create", this.followController.createFollow);
     router.delete("/delete", this.followController.deleteFollow)
     

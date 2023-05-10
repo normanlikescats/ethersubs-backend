@@ -1,10 +1,11 @@
 class CreatorController {
-  constructor(creatorModel, postModel, commentModel, followModel, transactionModel) {
+  constructor(creatorModel, postModel, commentModel, followModel, transactionModel, userModel) {
     this.creatorModel = creatorModel;
     this.postModel = postModel;
     this.commentModel = commentModel;
     this.followModel = followModel;
     this.transactionModel = transactionModel;
+    this.userModel = userModel;
   }
 
   // Grab all Creator Profiles
@@ -25,7 +26,8 @@ class CreatorController {
         {
           where: {
             id: id
-          }
+          },
+          include: this.userModel
         }
       );
       return res.json(oneCreators)
