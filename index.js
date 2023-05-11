@@ -38,7 +38,7 @@ const FollowRouter = require("./Routers/FollowRouter");
 // Define Controllers
 const userController = new UserController(users);
 const creatorController = new CreatorController(creators, posts, comments, follows, transactions, users);
-const postController = new PostController(posts, comments);
+const postController = new PostController(posts, comments, creators);
 const transactionController = new TransactionController(transactions);
 const commentController = new CommentController(comments);
 const followController = new FollowController(follows);

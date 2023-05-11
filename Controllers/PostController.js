@@ -1,7 +1,8 @@
 class PostController {
-  constructor(postModel, commentModel) {
+  constructor(postModel, commentModel, creatorModel) {
     this.postModel = postModel;
     this.commentModel = commentModel;
+    this.creatorModel = creatorModel;
   }
 
   // Grab all posts by Creators
@@ -29,6 +30,10 @@ class PostController {
         {
           where: {
             id: id
+          },
+          include: {
+            model: this.creatorModel,
+            attributes: ['name']
           }
         }
       );
