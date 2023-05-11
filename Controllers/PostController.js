@@ -13,7 +13,10 @@ class PostController {
         {
           where:{
             creator_id: creator_id
-          }
+          },
+          order: [
+            ['created_at', 'DESC']
+          ]
         }
       );
       return res.json(allPostsByCreator)
@@ -33,7 +36,7 @@ class PostController {
           },
           include: {
             model: this.creatorModel,
-            attributes: ['name']
+            attributes: ['name', 'image', 'id', 'user_id']
           }
         }
       );

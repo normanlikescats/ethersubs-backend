@@ -11,7 +11,10 @@ class TransactionController {
         {
           where:{
             user_id: user_id
-          }
+          },
+          order: [
+            ['created_at', 'DESC']
+          ]
         }
       );
       return res.json(allTransactionsByUser)
@@ -28,7 +31,10 @@ class TransactionController {
         {
           where:{
             creator_id: creator_id
-          }
+          },
+          order: [
+            ['created_at', 'DESC']
+          ]
         }
       );
       return res.json(allTransactionsByCreator)
