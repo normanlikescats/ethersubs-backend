@@ -6,6 +6,7 @@ class UserRouter {
   route = () => {
     let router = this.express.Router();
 
+    router.get("/:id", this.UserController.getOneProfile);
     router.post("/", this.UserController.getOrCreate);
     router.put("/", this.UserController.editProfile);
     return router;

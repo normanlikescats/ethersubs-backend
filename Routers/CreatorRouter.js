@@ -7,6 +7,7 @@ class CreatorRouter {
     let router = this.express.Router();
 
     router.get("/all", this.creatorController.getAllCreators);
+    router.get("/user/:userId", this.creatorController.getAllCreatorsByUser);
     router.get("/:id", this.creatorController.getOneCreator);
     router.post("/create", this.creatorController.createCreator);
     router.put("/edit/:id", this.creatorController.editCreator);

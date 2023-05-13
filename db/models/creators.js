@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.posts)
       this.hasMany(models.transactions)
       this.hasMany(models.follows)
+      this.hasMany(models.thresholds)
     }
   }
   Creators.init(

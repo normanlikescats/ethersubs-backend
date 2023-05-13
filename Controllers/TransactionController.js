@@ -1,6 +1,8 @@
 class TransactionController {
-  constructor(transactionModel) {
+  constructor(transactionModel, creatorModel, userModel) {
     this.transactionModel = transactionModel;
+    this.creatorModel = creatorModel;
+    this.userModel = userModel;
   }
 
   // Grab all txns by User
@@ -14,7 +16,11 @@ class TransactionController {
           },
           order: [
             ['created_at', 'DESC']
-          ]
+          ],
+          include: {
+            model: this.creatorModel,
+            attributes: ['name']
+          }
         }
       );
       return res.json(allTransactionsByUser)
@@ -23,9 +29,14 @@ class TransactionController {
     }
   }
 
-  // Grab all txns by Creator
+  // Grab all txns by Creator(s)
   getAllTransactionsByCreator = async (req, res) =>{
-    const creator_id = req.params.creatorId
+    const rawCreatorId = req.params.creatorId
+    let creator_id = rawCreatorId
+    if(creator_id.includes("-")){
+      creator_id = creator_id.split("-")
+    }
+    console.log(creator_id)
     try {
       const allTransactionsByCreator = await this.transactionModel.findAll(
         {
@@ -34,7 +45,15 @@ class TransactionController {
           },
           order: [
             ['created_at', 'DESC']
-          ]
+          ],
+          include: [{
+            model: this.userModel,
+            attributes: ['display_name' , 'wallet']
+          },
+          {
+            model: this.creatorModel,
+            attributes: ['name']
+          }]
         }
       );
       return res.json(allTransactionsByCreator)

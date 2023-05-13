@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.comments)
       this.hasMany(models.transactions)
       this.hasMany(models.follows)
+      this.hasMany(models.thresholds)
     }
   }
   Users.init(

@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 const db = require("./db/models/index");
 
 // import models
-const { users, creators, posts, transactions, comments, follows } = db;
+const { users, creators, posts, transactions, comments, follows, thresholds } = db;
 
 // Require Controllers
 const UserController = require("./Controllers/UserController");
@@ -26,6 +26,7 @@ const PostController = require("./Controllers/PostController");
 const TransactionController = require("./Controllers/TransactionController");
 const CommentController = require("./Controllers/CommentController");
 const FollowController = require("./Controllers/FollowController");
+const ThresholdController = require("./Controllers/ThresholdController");
 
 // Require Routers
 const UserRouter = require("./Routers/UserRouter");
@@ -34,14 +35,16 @@ const PostRouter = require("./Routers/PostRouter");
 const TransactionRouter = require("./Routers/TransactionRouter");
 const CommentRouter = require("./Routers/CommentRouter");
 const FollowRouter = require("./Routers/FollowRouter");
+const ThresholdRouter = require("./Routers/ThresholdRouter");
 
 // Define Controllers
 const userController = new UserController(users);
 const creatorController = new CreatorController(creators, posts, comments, follows, transactions, users);
 const postController = new PostController(posts, comments, creators);
-const transactionController = new TransactionController(transactions);
+const transactionController = new TransactionController(transactions, creators, users);
 const commentController = new CommentController(comments, users);
-const followController = new FollowController(follows);
+const followController = new FollowController(follows, creators);
+const thresholdController = new ThresholdController(thresholds);
 
 // Define Routers
 const userRouter = new UserRouter(userController, express).route();
@@ -50,6 +53,7 @@ const postRouter = new PostRouter(postController, express).route();
 const transactionRouter = new TransactionRouter(transactionController, express).route();
 const commentRouter = new CommentRouter(commentController, express).route();
 const followRouter = new FollowRouter(followController, express).route();
+const thresholdRouter = new ThresholdRouter(thresholdController, express).route();
 
 app.use("/users", userRouter);
 app.use("/creators", creatorRouter);
@@ -57,6 +61,7 @@ app.use("/posts", postRouter);
 app.use("/transactions", transactionRouter);
 app.use("/comments", commentRouter);
 app.use("/follows", followRouter);
+app.use("/thresholds", thresholdRouter);
 
 app.listen(PORT, () => {
   console.log(`Express app listening on port ${PORT}!`);
