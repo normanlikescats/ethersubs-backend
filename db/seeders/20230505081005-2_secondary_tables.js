@@ -52,12 +52,168 @@ module.exports = {
           discord: null,
           youtube: null,
           website: "https://zachxbt.mirror.xyz/",
-          tier_1: 0.08,
-          tier_2: 0.28,
+          tier_1: 0.05,
+          tier_2: 0.2,
           tier_3: 0.3,
-          threshold: 0.88,
+          threshold: 0.3,
           created_at: new Date(),
           updated_at: new Date()
+        },
+        {
+          id: 4,
+              user_id: 5,
+              bio: `The Daily Degen is a daily synopsis of the most important news/data/alerts in defi and macro! Every day, 365 days a year!`,
+              name: "The Daily Degen",
+              image: "https://pbs.twimg.com/media/FwKY1vdaAAAOqbW?format=jpg&name=small",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 5,
+              user_id: 5,
+              bio: `Software Engineer. I explain crypto topics in simple terms`,
+              name: "0xCygaar",
+              image: "https://pbs.twimg.com/profile_images/1522469965739139072/_F1ailAk_400x400.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 6,
+              user_id: 5,
+              bio: `The Daily Degen is a daily synopsis of the most important news/data/alerts in defi and macro! Every day, 365 days a year!`,
+              name: "The Daily Degen",
+              image: "https://pbs.twimg.com/media/FwKY1vdaAAAOqbW?format=jpg&name=small",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 7,
+              user_id: 5,
+              bio: `Helping you find personal freedom by getting 1% better every day | 24,000+ improving themselves weekly through my free newsletter`,
+              name: "NFT God",
+              image: "https://pbs.twimg.com/profile_images/1489268127565324291/ZQK5RoFg_400x400.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 8,
+              user_id: 5,
+              bio: `Community strategist • Helping you build your unique community edge • Writing about community, culture & branding in Web3`,
+              name: "alea.eth",
+              image: "https://pbs.twimg.com/profile_images/1639643683149561856/EmK3CklP_400x400.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 9,
+              user_id: 5,
+              bio: `Creator of AlphaPleaseHQ. Doing research on DeFi so you don't have to.`,
+              name: "Aylo",
+              image: "https://pbs.twimg.com/profile_images/1504139683751763971/YDAbI0Ay_400x400.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 10,
+              user_id: 5,
+              bio: `Breaking down the psychology of success to accelerate your personal growth 📈. Subscribe to my newsletter for weekly digests.`,
+              name: "Kelano.eth",
+              image: "https://pbs.twimg.com/profile_images/1655260163610222594/Zome3Rb5_400x400.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 11,
+              user_id: 5,
+              bio: `I will teach you how to navigate the world of cryptocurrency. Learn with me and sail to financial freedom!`,
+              name: "crypthoem",
+              image: "https://pbs.twimg.com/profile_images/1583462717498728455/puvD9UlZ_400x400.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 12,
+              user_id: 5,
+              bio: `The Daily Degen is a daily synopsis of the most important news/data/alerts in defi and macro! Every day, 365 days a year!`,
+              name: "The Daily Degen",
+              image: "https://pbs.twimg.com/media/FwKY1vdaAAAOqbW?format=jpg&name=small",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 13,
+              user_id: 5,
+              bio: `Narratives trader. No long term positions. No biases. Only PnL`,
+              name: "Byzantine General",
+              image: "https://static.wixstatic.com/media/cd049f_38e3154906ec48309ea273a871181a19~mv2.jpg/v1/fill/w_400,h_400,al_c/cd049f38e3154906ec48309ea273a871181a19~mv2.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 14,
+              user_id: 5,
+              bio: `Building the next big onboarding solution for Web3.`,
+              name: "Johnny Buidler",
+              image: "https://img.freepik.com/premium-photo/artificial-intelligence-humanoid-head-with-neural-network-thinks-futuristic-modern-3d-illustration_76964-5497.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
+        },
+        {
+          id: 15,
+              user_id: 5,
+              bio: `Data Wizard ✨ Contributor to DeFiLlama and Dune Analytics`,
+              name: "Kofi",
+              image: "https://pbs.twimg.com/profile_images/1387869109015220227/8HJxHNxq_400x400.jpg",
+              tier_1: 0.01,
+              tier_2: 0.05,
+              tier_3: 0.1,
+              threshold: 0.08,
+              created_at: new Date(),
+              updated_at: new Date()
         }
       ],
       {}
@@ -96,8 +252,8 @@ Trade safe frens.`,
           content: `Moderator of popular degen subreddit, WallStreetBets, rugpulls their own memecoin, WSB, draining ~330ETH in liquidity by dumping a large portion of the team's supply. The price of the WSB token cratered, quickly leaving community memebers in shambles.
 
           ZJZ.eth is now on the run. He has claimed innocence, accusing fellow moderator, WSBMod of stealing from the team funds although WSBMod denies the allegations.`,
-          created_at: new Date(),
-          updated_at: new Date()
+          created_at: new Date("2023-04-04 16:02:24.921+08"),
+          updated_at: new Date("2023-04-04 16:02:24.921+08")
         },
         {
           id:4,
@@ -107,8 +263,26 @@ Trade safe frens.`,
           content: `Famous, but I guess, broke, rapper, Soulja Boy, rugs not one, not two, but three, NFT collections in a single week.
           
           Inflation is going up but damn, Soulja must be trash at finances.`,
-          created_at: new Date(),
-          updated_at: new Date()
+          created_at: new Date("2023-04-11 16:02:24.921+08"),
+          updated_at: new Date("2023-04-11 16:02:24.921+08")
+        },
+        {
+          id:5,
+          creator_id:3,
+          title: "Ben.eth: A Crook Never Changes",
+          image: "https://pbs.twimg.com/profile_images/1595481185068597248/vPgn5glR_400x400.png",
+          content: `Ben.eth launches his own memecoin, $PSYOP, releasing a contract only, with no website, no twitter, just a contract. But the apes don't seem to care. The contract has so far collected more than $7m and the numbers continue to rise. Some people seem convinced that Ben has something exciting planned for the coin, but the skeptic in me says it's definitely gonna rug within a week from now. Grifters don't change.`,
+          created_at: new Date("2023-05-14 16:02:24.921+08"),
+          updated_at: new Date("2023-05-14 16:02:24.921+08")
+        },
+        {
+          id:6,
+          creator_id:3,
+          title: "GemSwap rugpulls",
+          image: "https://pbs.twimg.com/media/Fs4u9IxWYAgCEs9.jpg",
+          content: `ZkSync Era has been one of the hottest new chains, but not always for the right reasons. ZkSync DEX, GemSwap, rugpulled last night, dumping the entire team's supply on the open market, leaving investors holding the bag as the token dumps 96% in a swift candle. ZkSync may be a prime target for farming airdrops, but stay vigilant as where the attention goes, scammers will soon follow.`,
+          created_at: new Date("2023-05-07 16:02:24.921+08"),
+          updated_at: new Date("2023-05-07 16:02:24.921+08")
         }
       ],
       {}

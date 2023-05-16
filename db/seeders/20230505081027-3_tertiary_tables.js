@@ -44,6 +44,62 @@ module.exports = {
         created_at: new Date(),
         updated_at: new Date()
       },
+      {
+        id:6,
+        user_id:6,
+        post_id:5,
+        comment:"Ok all in $PSYOP.",
+        created_at: new Date("2023-05-15 16:02:24.921+08"),
+        updated_at: new Date("2023-05-15 16:02:24.921+08")
+      },
+      {
+        id:7,
+        user_id:7,
+        post_id:5,
+        comment:"Damn I'm alr all in bro",
+        created_at: new Date("2023-05-14 16:02:24.921+08"),
+        updated_at: new Date("2023-05-14 16:02:24.921+08")
+      },
+      {
+        id:8,
+        user_id:8,
+        post_id:5,
+        comment:"yeeaaa gonna avoid the current memecoin frenzy. Me thinks it's gonna dump soon...",
+        created_at: new Date("2023-05-15 16:02:24.921+08"),
+        updated_at: new Date("2023-05-15 16:02:24.921+08")
+      },
+      {
+        id:9,
+        user_id:9,
+        post_id:5,
+        comment:"Absolutely whack that this guy just got 7m outta nowhere",
+        created_at: new Date("2023-05-16 16:02:24.921+08"),
+        updated_at: new Date("2023-05-16 16:02:24.921+08")
+      },
+      {
+        id:10,
+        user_id:10,
+        post_id:6,
+        comment:"Damn...worst piece of news to wake up to. Lost 5ETH sheesh",
+        created_at: new Date("2023-05-07 16:02:24.921+08"),
+        updated_at: new Date("2023-05-07 16:02:24.921+08")
+      },
+      {
+        id:11,
+        user_id:1,
+        post_id:6,
+        comment:"ZkSync? more like ZkScam.",
+        created_at: new Date("2023-05-09 16:02:24.921+08"),
+        updated_at: new Date("2023-05-10 16:02:24.921+08")
+      },
+      {
+        id:12,
+        user_id:1,
+        post_id:6,
+        comment:"The zk in zkSync represents the amount of knowledge the average user has lol.",
+        created_at: new Date("2023-05-11 16:02:24.921+08"),
+        updated_at: new Date("2023-05-11 16:02:24.921+08")
+      }
     ],{});
     await queryInterface.bulkInsert("transactions",[
       {
@@ -143,7 +199,7 @@ module.exports = {
       {
         id: 1,
         user_id: 1,
-        creator_id: 1,
+        creator_id: 3,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -172,6 +228,20 @@ module.exports = {
         id: 5,
         user_id: 2,
         creator_id: 2,
+        created_at: new Date(),
+        updated_at: new Date()
+      }, 
+      {
+        id: 6,
+        user_id: 1,
+        creator_id: 12,
+        created_at: new Date(),
+        updated_at: new Date()
+      },
+      {
+        id: 7,
+        user_id: 1,
+        creator_id: 8,
         created_at: new Date(),
         updated_at: new Date()
       }

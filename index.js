@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
+const { auth } = require("express-oauth2-jwt-bearer");
 
 const PORT = process.env.PORT;
 const app = express();
@@ -9,10 +10,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-/*const checkJwt = auth({
+const checkJwt = auth({
   audience: process.env.DB_AUDIENCE,
   issuerBaseURL: process.env.DB_ISSUER_BASEURL,
-});*/
+  tokenSigningAlg: 'RS256'
+});
 
 const db = require("./db/models/index");
 
@@ -47,13 +49,13 @@ const followController = new FollowController(follows, creators);
 const thresholdController = new ThresholdController(thresholds);
 
 // Define Routers
-const userRouter = new UserRouter(userController, express).route();
-const creatorRouter = new CreatorRouter(creatorController, express).route();
-const postRouter = new PostRouter(postController, express).route();
-const transactionRouter = new TransactionRouter(transactionController, express).route();
-const commentRouter = new CommentRouter(commentController, express).route();
-const followRouter = new FollowRouter(followController, express).route();
-const thresholdRouter = new ThresholdRouter(thresholdController, express).route();
+const userRouter = new UserRouter(userController, express, checkJwt).route();
+const creatorRouter = new CreatorRouter(creatorController, express, checkJwt).route();
+const postRouter = new PostRouter(postController, express, checkJwt).route();
+const transactionRouter = new TransactionRouter(transactionController, express, checkJwt).route();
+const commentRouter = new CommentRouter(commentController, express, checkJwt).route();
+const followRouter = new FollowRouter(followController, express, checkJwt).route();
+const thresholdRouter = new ThresholdRouter(thresholdController, express, checkJwt).route();
 
 app.use("/users", userRouter);
 app.use("/creators", creatorRouter);

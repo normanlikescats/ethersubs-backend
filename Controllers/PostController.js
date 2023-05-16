@@ -36,7 +36,7 @@ class PostController {
           },
           include: {
             model: this.creatorModel,
-            attributes: ['name', 'image', 'id', 'user_id']
+            attributes: ['name', 'image', 'id', 'user_id', 'threshold']
           }
         }
       );

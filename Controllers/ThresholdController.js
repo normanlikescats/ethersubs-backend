@@ -22,6 +22,36 @@ class ThresholdController {
     }
   }
 
+  //Find or create threshold
+  getOrCreate = async (req, res) => {
+    const {
+      user_id,
+      creator_id,
+      amount
+    } = req.body
+    console.log(user_id)
+    console.log(creator_id)
+    console.log(amount)
+    try {
+      const [threshold, created] = await this.thresholdModel.findOrCreate(
+        {
+          where: {
+            user_id: user_id,
+            creator_id: creator_id
+          },
+          defaults :{
+            total_contribution: amount
+          }
+        }
+      );
+      console.log(created)
+      console.log(threshold)
+      return res.json({threshold: threshold, created: created});
+    } catch (err) {
+      return res.status(400).json({ error: true, msg: err });
+    }
+  };
+
   // Create a threshold entry
   createThreshold = async (req, res) => {
     const {
@@ -47,7 +77,8 @@ class ThresholdController {
   editThreshold = async(req,res) => {
     const user_id = req.params.userId
     const creator_id = req.params.creatorId
-    const newTotalAmount = req.body
+    const {newTotalAmount} = req.body
+    console.log(newTotalAmount)
     try {
       const editedThreshold = await this.thresholdModel.update(
         {
