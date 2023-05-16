@@ -45,7 +45,7 @@ module.exports = {
         {
           id: 5,
           display_name: "Do Kwon",
-          wallet: "0xBd0C46dFF928EcF13EeD5B7772f48e397b476842",
+          wallet: "0x14ec3036448afe9f4248676d446fe1eb8332b3cd",
           creator: true,
           photo_url: "https://ichef.bbci.co.uk/news/976/cpsprodpb/3A57/production/_126853941_104d47ed-d95d-44aa-97c9-b35e3c5067d4.jpg",
           created_at: new Date(),
@@ -54,7 +54,7 @@ module.exports = {
                 {
           id: 6,
           display_name: "Vitalik",
-          wallet: "0x2a430fdc6970b6dd8f80bd7996d694d77ad70933",
+          wallet: "0xbd0c46dff928ecf13eed5b7772f48e397b476842",
           creator: false,
           photo_url: "https://pbs.twimg.com/media/FOKvkYBVgAA4s37.jpg",
           created_at: new Date(),

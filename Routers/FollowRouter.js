@@ -11,7 +11,7 @@ class FollowRouter {
     router.get("/creator/:creatorId", this.checkJwt, this.followController.getAllFollowsByCreator);
     router.get("/one/:creatorId/:userId", this.checkJwt, this.followController.getFollowsByCreatorByUser);
     router.post("/create", this.checkJwt, this.followController.createFollow);
-    router.delete("/delete", this.checkJwt, this.followController.deleteFollow)
+    router.delete("/delete/:userId/:creatorId", this.checkJwt, this.followController.deleteFollow)
     
 
     return router;
