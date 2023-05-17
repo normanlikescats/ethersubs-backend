@@ -1,16 +1,17 @@
 class FollowRouter {
-  constructor(followController, express) {
+  constructor(followController, express, checkJwt) {
     this.followController = followController;
     this.express = express;
+    this.checkJwt = checkJwt
   }
   route = () => {
     let router = this.express.Router();
 
-    router.get("/user/:userId", this.followController.getAllFollowsByUser);
-    router.get("/creator/:creatorId", this.followController.getAllFollowsByCreator);
-    router.get("/one/:creatorId/:userId", this.followController.getFollowsByCreatorByUser);
-    router.post("/create", this.followController.createFollow);
-    router.delete("/delete", this.followController.deleteFollow)
+    router.get("/user/:userId", this.checkJwt, this.followController.getAllFollowsByUser);
+    router.get("/creator/:creatorId", this.checkJwt, this.followController.getAllFollowsByCreator);
+    router.get("/one/:creatorId/:userId", this.checkJwt, this.followController.getFollowsByCreatorByUser);
+    router.post("/create", this.checkJwt, this.followController.createFollow);
+    router.delete("/delete/:userId/:creatorId", this.checkJwt, this.followController.deleteFollow)
     
 
     return router;

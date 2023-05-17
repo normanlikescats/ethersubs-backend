@@ -12,13 +12,31 @@ class UserController {
           where: {
             wallet: wallet
           },
-          default:{
+          defaults :{
+            photo_url: "https://firebasestorage.googleapis.com/v0/b/ethersubs.appspot.com/o/images%2Fplaceholderpfp.png?alt=media&token=56fa49bb-f60a-41fc-ae2b-7a8945173cca",
             creator: false
           }
         }
       );
       console.log(created)
       return res.json(user);
+    } catch (err) {
+      return res.status(400).json({ error: true, msg: err });
+    }
+  };
+
+  // Find User Profile by Id
+  getOneProfile = async (req, res) => {
+    const id = req.params.id
+    try {
+      const oneUser = await this.userModel.findAll(
+        {
+          where:{
+            id: id
+          }
+        }
+      );
+      return res.json(oneUser);
     } catch (err) {
       return res.status(400).json({ error: true, msg: err });
     }

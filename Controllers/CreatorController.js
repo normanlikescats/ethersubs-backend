@@ -18,6 +18,23 @@ class CreatorController {
     }
   }
 
+  // Grab all Creator Profiles By User id (bc one user can own more than 1 creator profile)
+  getAllCreatorsByUser = async (req, res) =>{
+    const user_id = req.params.userId
+    try {
+      const allCreatorsByUser = await this.creatorModel.findAll(
+        {
+          where:{
+            user_id: user_id
+          }
+        }
+      );
+      return res.json(allCreatorsByUser)
+    } catch(err){
+      return res.status(400).json({ error: true, msg: err });
+    }
+  }
+
   // Get one Creator Profile
   getOneCreator = async (req, res) =>{
     const id = req.params.id

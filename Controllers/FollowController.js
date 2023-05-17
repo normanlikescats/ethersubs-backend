@@ -1,6 +1,7 @@
 class FollowController {
-  constructor(followModel) {
+  constructor(followModel, creatorModel) {
     this.followModel = followModel;
+    this.creatorModel = creatorModel;
   }
 
   // Grab all follows by User
@@ -12,6 +13,10 @@ class FollowController {
           attributes: ['creator_id'],
           where:{
             user_id: user_id
+          },
+          include: {
+            model: this.creatorModel,
+            attributes: ['name', 'image', 'bio']
           }
         }
       );
@@ -79,10 +84,8 @@ class FollowController {
 
   // Delete comment
   deleteFollow = async (req, res) => {
-    const {
-      user_id,
-      creator_id
-    } = req.body
+    const user_id = req.params.userId
+    const creator_id = req.params.creatorId
     // code in dependency deletion here
     try{
       await this.followModel.destroy(

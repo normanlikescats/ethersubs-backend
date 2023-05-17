@@ -1,6 +1,7 @@
 class CommentController {
-  constructor(commentModel) {
+  constructor(commentModel, userModel) {
     this.commentModel = commentModel;
+    this.userModel = userModel;
   }
 
   // Grab all comments by post
@@ -11,7 +12,14 @@ class CommentController {
         {
           where:{
             post_id: post_id
-          }
+          },
+          include:{
+            model: this.userModel,
+            attributes: ['display_name', 'photo_url']
+          },
+          order: [
+            ['created_at', 'DESC']
+          ]
         }
       );
       return res.json(allCommentsByPost)
@@ -28,6 +36,10 @@ class CommentController {
         {
           where: {
             id: id
+          },
+          include:{
+            model: this.userModel,
+            attributes: ['id', 'display_name', 'photo_url']
           }
         }
       );
