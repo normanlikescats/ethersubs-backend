@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       user_id: DataTypes.INTEGER,
       creator_id: DataTypes.INTEGER,
       total_contribution: DataTypes.FLOAT,
+      status: DataTypes.BOOLEAN,
       created_at: DataTypes.DATE,
       updated_at: DataTypes.DATE,
     },

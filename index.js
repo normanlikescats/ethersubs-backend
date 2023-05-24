@@ -3,7 +3,7 @@ require("dotenv").config();
 const cors = require("cors");
 const { auth } = require("express-oauth2-jwt-bearer");
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(cors());

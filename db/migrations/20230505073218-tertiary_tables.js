@@ -134,6 +134,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.FLOAT
       },
+      status:{
+        allowNull: false,
+        type: Sequelize.BOOLEAN
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,

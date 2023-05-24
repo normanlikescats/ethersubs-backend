@@ -9,40 +9,40 @@ module.exports = {
         user_id:1,
         post_id:1,
         comment:"Woooo love it man LFG!",
-        created_at: new Date(),
-        updated_at: new Date()
+        created_at: new Date("2023-04-01 16:02:24.921+08"),
+        updated_at: new Date("2023-04-01 16:02:24.921+08")
       },
       {
         id:2,
         user_id:3,
         post_id:1,
         comment:"$WOJAK and $CHAD is where it's at...iykyk",
-        created_at: new Date(),
-        updated_at: new Date()
+        created_at: new Date("2023-03-31 16:02:24.921+08"),
+        updated_at: new Date("2023-03-31 16:02:24.921+08")
       },
       {
         id:3,
         user_id:3,
         post_id:2,
         comment:"Sheesh, tradfi always a bummer...",
-        created_at: new Date(),
-        updated_at: new Date()
+        created_at: new Date("2023-04-07 16:02:24.921+08"),
+        updated_at: new Date("2023-04-07 16:02:24.921+08")
       },
       {
         id:4,
         user_id:1,
         post_id:3,
         comment:"Man, WSB was actually cool. Sad to see. Hope karma catches up to him.",
-        created_at: new Date(),
-        updated_at: new Date()
+        created_at: new Date("2023-04-04 16:02:24.921+08"),
+        updated_at: new Date("2023-04-04 16:02:24.921+08")
       },
       {
         id:5,
         user_id:1,
         post_id:4,
         comment:"Thank u ser for the work u do.",
-        created_at: new Date(),
-        updated_at: new Date()
+        created_at: new Date("2023-04-11 16:02:24.921+08"),
+        updated_at: new Date("2023-04-11 16:02:24.921+08")
       },
       {
         id:6,
@@ -252,6 +252,7 @@ module.exports = {
         user_id: 1,
         creator_id: 1,
         total_contribution: 0.0005263157895,
+        status: false,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -260,6 +261,7 @@ module.exports = {
         user_id: 2,
         creator_id: 1,
         total_contribution: 0.002631578947,
+        status: false,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -268,6 +270,7 @@ module.exports = {
         user_id: 2,
         creator_id: 2,
         total_contribution: 0.05263157895,
+        status: false,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -276,6 +279,7 @@ module.exports = {
         user_id: 3,
         creator_id: 2,
         total_contribution: 0.01,
+        status: false,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -284,6 +288,7 @@ module.exports = {
         user_id: 4,
         creator_id: 2,
         total_contribution: 0.2616,
+        status: true,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -292,6 +297,7 @@ module.exports = {
         user_id: 1,
         creator_id: 3,
         total_contribution: 0.3178947368,
+        status: true,
         created_at: new Date(),
         updated_at: new Date()
       },
